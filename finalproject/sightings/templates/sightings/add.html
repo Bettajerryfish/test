@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    h2 {color:Black;font-size:60px;font-family:Courier New;}
+    body {color:LightBlue; font-size:20px; font-family:Courier New;background-color:#FDF5E6;}
+    
+    </style>
+    </head>
+
+
+    <body>
+        <div class="miniwrap">
+        <h2>Add a new sighting</h2>
+        <form method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+        <br>
+        <input type="submit" value="Add">
+        </form>
+    </body>
+</html>
+

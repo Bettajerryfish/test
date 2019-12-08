@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>This is the home page</title>
+        <h2><center>Squirrel Sightings</center></h2>
+        <style type="text/css">
+        h2 {color:Black;font-size:60px;font-family:Courier New;}
+        body {color:LightBlue; font-size:20px; font-family:Courier New;background-color:#FDF5E6;}
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <a href='{%url 'sightings:add'%}'>Add some squirrel data</a>
+            </li>
+            <li>
+                <a href='{% url 'sightings:stats'%}'>Take a glance at the squirresl sighting statistics</a>
+            </li>
+        <li>
+        <a href="/map">This is the map</a>
+        </li>
+        </ul>
+
+            {%if sightings%}
+                <ul>
+                    {%for sighting in sightings%}
+                    <li>{{sighting}}</li>
+                    <a href='{% url 'sightings:update' unique_squirrel_id=sighting.unique_squirrel_id%}'>Add some data</a>
+                    {%endfor%}
+                </ul>
+            {% else %}
+                <p>Please try another squirrel</p>
+            {%endif%}
+    </body>
+</html>

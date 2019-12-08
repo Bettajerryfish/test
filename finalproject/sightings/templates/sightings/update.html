@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update the squirrels sightings</title>
+        <h2><center>Update the squirrels sightings</center></h2>
+        <style type="text/css">
+        h2 {color:Black;font-size:60px;font-family:Courier New;}
+        body {color:LightBlue; font-size:20px; font-family:Courier New;background-color:#FDF5E6;}
+        </style>
+    </head>
+    <body>
+  	<div class="miniwrap">
+    	<form  method="POST" id="updatesquirrel">
+        	{% csrf_token %}
+		      {{form.as_p}}
+        	<input type="submit" name='Submit'>
+      <br>
+    	</form>	
+   	</div> 
+    </body>
+</html>
